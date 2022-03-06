@@ -22,7 +22,7 @@ Options:
   --help                  Show this message and exit.
 ```
 
-By default pyut2xml assumes that the input file has a `.put` suffix and the output file has a `.xml` suffix. 
+By default, pyut2xml assumes that the input file has a `.put` suffix and the output file has a `.xml` suffix. 
 
 However, pyut2xml is flexible and can deduce file names and suffixes.  The best option is if you do not specify the output file pyut2xml then it deduces that the output file is the same as the input file name with the .xml suffix.  For example:
 
@@ -42,6 +42,10 @@ Another simple example:
 ```pyut2xml -i TestFileV10```
 
 causes pyut2xml to reads from a file named TestFileV10.put and write to a file named TestFileV10.xml
+
+# Installation
+
+```pip install pyut2xml```
 
 
 ___
