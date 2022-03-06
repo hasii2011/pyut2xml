@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PyutProject version="10" CodePath="">
+	<PyutDocument type="CLASS_DIAGRAM" title="MiniOgl" scrollPositionX="1" scrollPositionY="0" pixelsPerUnitX="20" pixelsPerUnitY="20">
+		<GraphicClass width="96.00" height="30.00" x="475.00" y="247.00">
+			<Class id="1" name="RotatableShape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="_defineShape" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="GetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetScale" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="scale" type="float"/>
+				</Method>
+				<Method name="GetScale" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetOrigin" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="_InitRotations" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="Rotate" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="clockwise" type="bool"/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_angle" type="" defaultValue="0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_vShapes" type="" defaultValue="_SHAPES[0]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_scale" type="" defaultValue="1.0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_sox,_soy" type="" defaultValue="_ox,_oy"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_sw,_sh" type="" defaultValue="_width,_height"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="109.00" height="30.00" x="34.00" y="752.00">
+			<Class id="2" name="SelectAnchorPoint" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="attachmentPoint" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="newValue" type="AttachmentPoint"/>
+				</Method>
+				<Method name="attachmentPoint" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="newValue" type="AttachmentPoint"/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="OnLeftDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Field visibility="PROTECTED">
+					<Param name="attachmentPoint" type="AttachmentPoint" defaultValue="attachmentPoint"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="103.00" height="44.00" x="193.00" y="261.00">
+			<Class id="3" name="LollipopLine" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+					<Param name="destinationAnchor" type="SelectAnchorPoint"/>
+				</Method>
+				<Method name="destinationAnchor" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="theNewValue" type="SelectAnchorPoint"/>
+				</Method>
+				<Method name="destinationAnchor" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="theNewValue" type="SelectAnchorPoint"/>
+				</Method>
+				<Method name="lineCoordinates" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="_calculateWhereToDrawLollipop" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PUBLIC">
+					<Param name="logger" type="Logger" defaultValue="getLogger(__name__)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="destinationAnchor" type="SelectAnchorPoint" defaultValue="cast(SelectAnchorPoint,None)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_destinationAnchor" type="" defaultValue="destinationAnchor"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="88.00" height="20.00" x="176.00" y="756.00">
+			<Class id="4" name="CommonPoint" filename="" description="" showMethods="True" showFields="True" showStereotype="True"/>
+		</GraphicClass>
+		<GraphicClass width="84.00" height="20.00" x="283.00" y="757.00">
+			<Class id="5" name="CommonLine" filename="" description="" showMethods="True" showFields="True" showStereotype="True"/>
+		</GraphicClass>
+		<GraphicClass width="118.00" height="60.00" x="381.00" y="756.00">
+			<Class id="6" name="Common" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="setupInsideCheck" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="insideSegment" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="insideBoundingBox" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="50.00" height="30.00" x="216.00" y="25.00">
+			<Class id="7" name="Shape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetPen" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="pen" type="Pen"/>
+				</Method>
+				<Method name="GetPen" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetBrush" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="brush" type="Brush"/>
+				</Method>
+				<Method name="GetBrush" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetID" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetID" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetOrigin" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetOrigin" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AppendChild" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="child" type="&quot;Shape&quot;"/>
+				</Method>
+				<Method name="GetAllChildren" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetChildren" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AddAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AddAnchorPoint" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveAllAnchors" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AddText" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="_AddPrivateText" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="_CreateTextShape" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="Attach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Detach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawChildren" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="dc" type="DC"/>
+				</Method>
+				<Method name="DrawBorder" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawAnchors" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawHandles" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="dc" type="DC"/>
+				</Method>
+				<Method name="GetAnchors" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetParent" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetParent" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="parent" type="'Shape'"/>
+				</Method>
+				<Method name="GetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetTopLeft" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="ConvertCoordToRelative" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetRelativePosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Inside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="IsDraggable" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="IsProtected" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="IsSelected" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="IsVisible" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSelected" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="IsMoving" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMoving" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDraggable" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetRelativePosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetProtected" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="newValue" type="bool"/>
+				</Method>
+				<Method name="SetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetVisible" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="theNewValue" type="bool"/>
+				</Method>
+				<Method name="GetDiagram" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="UpdateFromModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="UpdateModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="HasDiagramFrame" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="__repr__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PROTECTED">
+					<Param name="x" type="float" defaultValue="x"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="y" type="float" defaultValue="y"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="ox" type="float" defaultValue="0.0"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="oy" type="float" defaultValue="0.0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_parent" type="" defaultValue="parent"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_selected" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_anchors" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_visible" type="" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_draggable" type="" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_moving" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_diagram" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_protected" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_children" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_privateChildren" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="pen" type="Pen" defaultValue="BLACK_PEN"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="brush" type="Brush" defaultValue="WHITE_BRUSH"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_model" type="" defaultValue="ShapeModel(self)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_id" type="" defaultValue="Shape.ID"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="75.00" height="30.00" x="649.00" y="26.00">
+			<Class id="8" name="PointShape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="dc" type="DC,withChildren=True"/>
+				</Method>
+				<Method name="GetSelectionZone" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSelectionZone" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Inside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetVisibleWhenSelected" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool"/>
+				</Method>
+				<Method name="GetVisibleWhenSelected" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="__resetPenColor" visibility="PRIVATE">
+					<Return type=""/>
+					<Param name="dc" type="DC"/>
+				</Method>
+				<Field visibility="PROTECTED">
+					<Param name="selectZone" type="int" defaultValue="PointShape.SELECTION_ZONE"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="visibleWhenSelected" type="bool" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="penSaveColor" type="Colour" defaultValue="cast(Colour,None)"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="120.00" height="82.00" x="521.00" y="324.00">
+			<Class id="9" name="VShape" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Convert" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Scale" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="74.00" height="70.00" x="110.00" y="527.00">
+			<Class id="10" name="VRectangle" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="73.00" height="70.00" x="204.00" y="527.00">
+			<Class id="11" name="VEllipse" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="73.00" height="70.00" x="297.00" y="527.00">
+			<Class id="12" name="VCircle" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="73.00" height="70.00" x="390.00" y="527.00">
+			<Class id="13" name="VArc" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="76.00" height="70.00" x="483.00" y="527.00">
+			<Class id="14" name="VEllipticArc" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="81.00" height="70.00" x="579.00" y="527.00">
+			<Class id="15" name="VLineLength" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="73.00" height="70.00" x="680.00" y="527.00">
+			<Class id="16" name="VLineDest" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="83.00" height="66.00" x="780.00" y="528.00">
+			<Class id="17" name="VPolygon" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetAngle" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="65.00" height="60.00" x="885.00" y="526.00">
+			<Class id="18" name="VPen" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="65.00" height="60.00" x="1023.00" y="651.00">
+			<Class id="19" name="VBrush" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="()"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,r)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x1,y1,x2,y2,xc,yc)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h,start,end)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(x,y,w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="(sx,sy,dx,dy)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_data" type="" defaultValue="points"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_pen" type="" defaultValue="pen"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_brush" type="" defaultValue="brush"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="99.00" height="70.00" x="1105.00" y="18.00">
+			<Class id="20" name="TextShapeModel" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="GetFontSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetFontSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_fontSize" type="" defaultValue="0"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="90.00" height="58.00" x="339.00" y="273.00">
+			<Class id="21" name="TextShape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Attach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetText" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetText" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="text" type="str"/>
+				</Method>
+				<Method name="SetTextBackground" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="color" type="Colour"/>
+				</Method>
+				<Method name="GetTextBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawBorder" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="dc" type="DC"/>
+				</Method>
+				<Method name="GetColor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetColor" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="color" type="Colour"/>
+				</Method>
+				<Method name="UpdateFromModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="UpdateModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetFont" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="__repr__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PUBLIC">
+					<Param name="logger" type="Logger" defaultValue="getLogger(__name__)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="text" type="str" defaultValue="cast(str,None)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="color" type="Colour" defaultValue="BLACK"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="drawFrame" type="bool" defaultValue="False"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="resizable" type="bool" defaultValue="False"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="textBack" type="Colour" defaultValue="WHITE"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="model" type="TextShapeModel" defaultValue="TextShapeModel(self)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="font" type="Font" defaultValue="font"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="99.00" height="79.00" x="638.00" y="193.00">
+			<Class id="22" name="SizerShape" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMoving" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_moving" type="" defaultValue="True"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="168.00" height="121.00" x="1113.00" y="301.00">
+			<Class id="23" name="ShapeModel" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="GetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AddShape" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="removeShape" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetAllViews" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_views" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_x" type="" defaultValue="0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_y" type="" defaultValue="0"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="227.00" height="144.00" x="773.00" y="755.00">
+			<Class id="24" name="ShapeEventHandler" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="OnLeftDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnLeftUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnLeftDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="127.00" height="70.00" x="1125.00" y="155.00">
+			<Class id="25" name="RectangleShapeModel" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_width" type="" defaultValue="0.0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_height" type="" defaultValue="0.0"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="98.00" height="30.00" x="333.00" y="154.00">
+			<Class id="26" name="RectangleShape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetResizable" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool"/>
+				</Method>
+				<Method name="GetResizable" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetTopLeft" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetTopLeft" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawBorder" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDrawFrame" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Inside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetHeight" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSelected" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool=True"/>
+				</Method>
+				<Method name="Detach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="ShowSizers" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool=True"/>
+				</Method>
+				<Method name="SetSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Resize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="UpdateFromModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="UpdateModel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_width" type="" defaultValue="width"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_height" type="" defaultValue="height"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_drawFrame" type="" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_resizable" type="" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_topLeftSizer" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_topRightSizer" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_botLeftSizer" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_botRightSizer" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_model" type="" defaultValue="RectangleShapeModel(self)"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="71.00" height="30.00" x="42.00" y="253.00">
+			<Class id="27" name="LineShape" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="getSourceAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="setSourceAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="getDestinationAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="setDestinationAnchor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSpline" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSpline" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="AddControl" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetDestination" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDestination" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDrawArrow" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="draw" type="bool"/>
+				</Method>
+				<Method name="GetDrawArrow" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetArrowSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetArrowSize" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSource" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSource" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSegments" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetControlPoints" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Draw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawBorder" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DrawArrow" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Detach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="_RemoveControl" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="_RemoveAnchor" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveAllControlPoints" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Remove" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Inside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="InsideBoundingBox" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="InsideSegment" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSelected" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool=True"/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_srcAnchor" type="" defaultValue="srcAnchor"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_dstAnchor" type="" defaultValue="dstAnchor"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_controls" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_drawArrow" type="" defaultValue="True"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_arrowSize" type="" defaultValue="8"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_spline" type="" defaultValue="False"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="66.00" height="30.00" x="811.00" y="126.00">
+			<Class id="28" name="LinePoint" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="AddLine" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Detach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetLines" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveLine" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMoving" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool"/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_lines" type="" defaultValue="[]"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="208.00" height="550.00" x="1047.00" y="770.00">
+			<Class id="29" name="DiagramFrame" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+					<Param name="parent" type="Window"/>
+				</Method>
+				<Method name="getEventPosition" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="GenericHandler" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="OnLeftDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnLeftUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnDrag" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMove" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnLeftDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnMiddleDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightDown" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightUp" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="OnRightDClick" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="GetDiagram" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDiagram" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="FindShape" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DeselectAllShapes" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetSelectedShapes" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetSelectedShapes" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="shapes" type="List[Shape]"/>
+				</Method>
+				<Method name="KeepMoving" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Refresh" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SaveBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="LoadBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="ClearBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="CreateDC" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="PrepareBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="RedrawWithBackground" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Redraw" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="OnPaint" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="event" type="PaintEvent"/>
+				</Method>
+				<Method name="GetCurrentZoom" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetXOffset" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetYOffset" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetXOffset" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetYOffset" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetDefaultZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMaxZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetDefaultZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetMaxZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMinZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetMinZoomFactor" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DoZoomIn" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="DoZoomOut" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetMargins" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetMargins" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetInfinite" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="infinite" type="bool=False"/>
+				</Method>
+				<Method name="IsInfinite" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="_BeginSelect" visibility="PROTECTED">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="_OnMoveSelector" visibility="PROTECTED">
+					<Return type=""/>
+					<Param name="event" type="MouseEvent"/>
+				</Method>
+				<Method name="_NullCallback" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Method name="_ConvertEventCoordinates" visibility="PROTECTED">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_diagram" type="" defaultValue="Diagram(self)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="__keepMoving" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_selectedShapes" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_lastMousePosition" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_selector" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_clickedShape" type="" defaultValue="None"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_moving" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_xOffset" type="" defaultValue="0.0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_yOffset" type="" defaultValue="0.0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_zoomStack" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_zoomLevel" type="" defaultValue="0"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_maxZoomFactor" type="" defaultValue="6"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_minZoomFactor" type="" defaultValue="0.2"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_defaultZoomFactor" type="" defaultValue="1.5"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_leftMargin" type="" defaultValue="DEFAULT_MARGIN_VALUE"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_rightMargin" type="" defaultValue="DEFAULT_MARGIN_VALUE"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_topMargin" type="" defaultValue="DEFAULT_MARGIN_VALUE"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_bottomMargin" type="" defaultValue="DEFAULT_MARGIN_VALUE"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_isInfinite" type="" defaultValue="False"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="__workingBitmap" type="" defaultValue="Bitmap(w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="__backgroundBitmap" type="" defaultValue="Bitmap(w,h)"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_defaultFont" type="" defaultValue="Font(DEFAULT_FONT_SIZE,FONTFAMILY_DEFAULT,FONTSTYLE_NORMAL,FONTWEIGHT_NORMAL)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="prefs" type="PyutPreferences" defaultValue="PyutPreferences()"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="debugDialog" type="DlgDebugDiagramFrame" defaultValue="DlgDebugDiagramFrame(self,ID_ANY)"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="237.00" height="130.00" x="515.00" y="754.00">
+			<Class id="30" name="Diagram" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="AddShape" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="shape,withModelUpdate" type="bool=True"/>
+				</Method>
+				<Method name="DeleteAllShapes" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveShape" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="shape" type="SizerShape"/>
+				</Method>
+				<Method name="GetShapes" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetParentShapes" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="GetPanel" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="MoveToFront" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="shape" type="Shape"/>
+				</Method>
+				<Method name="MoveToBack" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="shape" type="Shape"/>
+				</Method>
+				<Field visibility="PRIVATE">
+					<Param name="_panel" type="" defaultValue="panel"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_shapes" type="" defaultValue="[]"/>
+				</Field>
+				<Field visibility="PRIVATE">
+					<Param name="_parentShapes" type="" defaultValue="[]"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="89.00" height="50.00" x="951.00" y="252.00">
+			<Class id="31" name="ControlPoint" filename="" description="" showMethods="True" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="RemoveLine" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+			</Class>
+		</GraphicClass>
+		<GraphicClass width="80.00" height="30.00" x="788.00" y="241.00">
+			<Class id="32" name="AnchorPoint" filename="" description="" showMethods="False" showFields="True" showStereotype="True">
+				<Method name="__init__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Method name="SetStayInside" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool"/>
+				</Method>
+				<Method name="GetStayInside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetStayOnBorder" visibility="PUBLIC">
+					<Return type=""/>
+					<Param name="state" type="bool"/>
+				</Method>
+				<Method name="GetStayOnBorder" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="SetPosition" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="stayInside" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="stickToBorder" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="Detach" visibility="PUBLIC">
+					<Return type=""/>
+				</Method>
+				<Method name="__repr__" visibility="PRIVATE">
+					<Return type=""/>
+				</Method>
+				<Field visibility="PUBLIC">
+					<Param name="logger" type="Logger" defaultValue="getLogger(__name__)"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="protected" type="bool" defaultValue="True"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="stayInside" type="bool" defaultValue="True"/>
+				</Field>
+				<Field visibility="PROTECTED">
+					<Param name="stayOnBorder" type="bool" defaultValue="True"/>
+				</Field>
+			</Class>
+		</GraphicClass>
+		<GraphicLink srcX="527.00" srcY="247.00" dstX="430.00" dstY="169.00" spline="False">
+			<ControlPoint x="527.0" y="171.0"/>
+			<Link name="PyutObject_00593" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="1" destId="26"/>
+		</GraphicLink>
+		<GraphicLink srcX="377.00" srcY="273.00" dstX="379.00" dstY="183.00" spline="False">
+			<Link name="PyutObject_00594" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="21" destId="26"/>
+		</GraphicLink>
+		<GraphicLink srcX="235.00" srcY="261.00" dstX="237.00" dstY="54.00" spline="False">
+			<Link name="PyutObject_00595" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="3" destId="7"/>
+		</GraphicLink>
+		<GraphicLink srcX="649.00" srcY="41.00" dstX="265.00" dstY="39.00" spline="False">
+			<Link name="PyutObject_00596" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="8" destId="7"/>
+		</GraphicLink>
+		<GraphicLink srcX="333.00" srcY="161.00" dstX="255.00" dstY="54.00" spline="False">
+			<ControlPoint x="256.0" y="160.0"/>
+			<Link name="PyutObject_00597" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="26" destId="7"/>
+		</GraphicLink>
+		<GraphicLink srcX="85.00" srcY="253.00" dstX="216.00" dstY="42.00" spline="False">
+			<ControlPoint x="83.0" y="44.0"/>
+			<Link name="PyutObject_00598" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="27" destId="7"/>
+		</GraphicLink>
+		<GraphicLink srcX="156.00" srcY="527.00" dstX="521.00" dstY="337.00" spline="False">
+			<ControlPoint x="161.0" y="339.0"/>
+			<Link name="PyutObject_00599" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="10" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="244.00" srcY="527.00" dstX="521.00" dstY="356.00" spline="False">
+			<ControlPoint x="248.0" y="356.0"/>
+			<Link name="PyutObject_00600" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="11" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="335.00" srcY="527.00" dstX="521.00" dstY="378.00" spline="False">
+			<ControlPoint x="337.0" y="378.0"/>
+			<Link name="PyutObject_00601" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="12" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="427.00" srcY="527.00" dstX="521.00" dstY="400.00" spline="False">
+			<ControlPoint x="425.0" y="399.0"/>
+			<Link name="PyutObject_00602" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="13" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="558.00" srcY="527.00" dstX="561.00" dstY="405.00" spline="False">
+			<Link name="PyutObject_00603" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="14" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="619.00" srcY="527.00" dstX="616.00" dstY="405.00" spline="False">
+			<Link name="PyutObject_00604" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="15" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="710.00" srcY="527.00" dstX="640.00" dstY="397.00" spline="False">
+			<ControlPoint x="706.0" y="398.0"/>
+			<Link name="PyutObject_00605" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="16" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="1171.50" srcY="87.00" dstX="1171.50" dstY="155.00" spline="False">
+			<Link name="PyutObject_00609" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="20" destId="25"/>
+		</GraphicLink>
+		<GraphicLink srcX="689.00" srcY="193.00" dstX="690.00" dstY="55.00" spline="False">
+			<ControlPoint x="690.0" y="123.0"/>
+			<Link name="PyutObject_00610" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="22" destId="8"/>
+		</GraphicLink>
+		<GraphicLink srcX="844.00" srcY="126.00" dstX="723.00" dstY="41.00" spline="False">
+			<ControlPoint x="844.0" y="40.0"/>
+			<Link name="PyutObject_00611" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="28" destId="8"/>
+		</GraphicLink>
+		<GraphicLink srcX="1183.50" srcY="224.00" dstX="1184.50" dstY="301.00" spline="False">
+			<Link name="PyutObject_00612" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="25" destId="23"/>
+		</GraphicLink>
+		<GraphicLink srcX="996.00" srcY="252.00" dstX="876.00" dstY="141.00" spline="False">
+			<ControlPoint x="996.0" y="139.0"/>
+			<Link name="PyutObject_00613" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="31" destId="28"/>
+		</GraphicLink>
+		<GraphicLink srcX="835.00" srcY="241.00" dstX="835.00" dstY="155.00" spline="False">
+			<Link name="PyutObject_00614" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="32" destId="28"/>
+		</GraphicLink>
+		<GraphicLink srcX="1074.00" srcY="651.00" dstX="640.00" dstY="332.50" spline="False">
+			<ControlPoint x="1070.0" y="334.0"/>
+			<Link name="PyutObject_01275" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="19" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="909.00" srcY="526.00" dstX="640.00" dstY="350.50" spline="False">
+			<ControlPoint x="908.0" y="352.0"/>
+			<Link name="PyutObject_01913" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="18" destId="9"/>
+		</GraphicLink>
+		<GraphicLink srcX="827.50" srcY="528.00" dstX="640.00" dstY="377.00" spline="False">
+			<ControlPoint x="825.0" y="377.0"/>
+			<Link name="PyutObject_00637" type="INHERITANCE" cardSrc="" cardDestination="" bidir="False" sourceId="17" destId="9"/>
+		</GraphicLink>
+	</PyutDocument>
+</PyutProject>
