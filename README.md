@@ -24,7 +24,7 @@ Options:
 
 By default, pyut2xml assumes that the input file has a `.put` suffix and the output file has a `.xml` suffix. 
 
-However, pyut2xml is flexible and can deduce file names and suffixes.  The best option is if you do not specify the output file pyut2xml then it deduces that the output file is the same as the input file name with the .xml suffix.  For example:
+However, pyut2xml is flexible and can deduce file names and suffixes.  The best option is if you do not specify the output file.  Then, pyut2xml deduces that the output file is the same as the input file name with the .xml suffix.  For example:
 
 ```pyut2xml -i TestFileV10.put```
 
