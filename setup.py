@@ -10,7 +10,7 @@ LICENSE = (HERE / 'LICENSE').read_text()
 
 setup(
     name="pyut2xml",
-    version="0.1.1",
+    version="0.1.2",
     author='Humberto A. Sanchez II',
     author_email='humberto.a.sanchez.ii@gmail.com',
     maintainer='Humberto A. Sanchez II',
