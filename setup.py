@@ -6,6 +6,7 @@ HERE = pathlib.Path(__file__).parent
 
 # The text of the README file
 README = (HERE / "README.md").read_text()
+LICENSE = (HERE / 'LICENSE').read_text()
 
 setup(
     name="pyut2xml",
@@ -17,6 +18,7 @@ setup(
     description='Pyut decompressor',
     long_description=README,
     long_description_content_type="text/markdown",
+    license=LICENSE,
     url="https://github.com/hasii2011/pyut2xml",
     packages=[
         'pyut2xml'
