@@ -8,5 +8,6 @@ build/
 dist/
 /pyut2xml.egg-info/
 /pyenv-3.9.9/
+/pyenv-3.11.0/
 .python-version
 .envrc

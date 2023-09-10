@@ -1,6 +1,8 @@
 import pathlib
 from setuptools import setup
 
+from pyut2xml import __version__ as pyut2xmlVersion
+
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
 
@@ -10,12 +12,12 @@ LICENSE = (HERE / 'LICENSE').read_text()
 
 setup(
     name="pyut2xml",
-    version="0.1.2",
+    version=pyut2xmlVersion,
     author='Humberto A. Sanchez II',
     author_email='humberto.a.sanchez.ii@gmail.com',
     maintainer='Humberto A. Sanchez II',
     maintainer_email='humberto.a.sanchez.ii@gmail.com',
-    description='Pyut decompressor',
+    description='Pyut decompressor and decompressor',
     long_description=README,
     long_description_content_type="text/markdown",
     license=LICENSE,
@@ -23,9 +25,9 @@ setup(
     packages=[
         'pyut2xml'
     ],
-    install_requires=['click'],
     entry_points='''
         [console_scripts]
         pyut2xml=pyut2xml.pyut2xml:commandHandler
     ''',
+    install_requires=['click==8.1.7'],
 )
