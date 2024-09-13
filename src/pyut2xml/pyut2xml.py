@@ -1,7 +1,6 @@
 
 import zlib
 
-
 from click import command
 from click import option
 from click import version_option
@@ -40,7 +39,7 @@ class Pyut2XML:
                 compressedData: bytes = inputFile.read()
 
                 clickEcho(f'Bytes read: {len(compressedData)}')
-                xmlBytes:  bytes = zlib.decompress(compressedData)  # has b'....' around it
+                xmlBytes:  bytes = zlib.decompress(compressedData)  # has b '....' around it
                 xmlString: str   = xmlBytes.decode()
 
                 clickEcho(f'Writing {len(xmlString)} bytes to {format_filename(self._outputFileName)}')

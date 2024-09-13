@@ -1,5 +1,4 @@
 
-
 from zlib import compress
 from zlib import ZLIB_VERSION
 
