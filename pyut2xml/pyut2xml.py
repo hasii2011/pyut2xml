@@ -9,7 +9,7 @@ from click import format_filename
 from click import echo as clickEcho
 from click import secho as clickSEcho
 
-__version__ = "0.1.1"
+from pyut2xml import __version__ as pyut2xmlVersion
 
 INPUT_SUFFIX:  str = '.put'
 OUTPUT_SUFFIX: str = '.xml'
@@ -50,8 +50,8 @@ class Pyut2XML:
 
 
 @command()
-@version_option(version=f'{__version__}', message='%(version)s')
-@option('-i', '--input-file', required=True, help='The input .put file to decompress.')
+@version_option(version=f'{pyut2xmlVersion}', message='%(version)s')
+@option('-i', '--input-file',  required=True,  help='The input .put file to decompress.')
 @option('-o', '--output-file', required=False, help='The output xml file.')
 def commandHandler(input_file: str, output_file: str):
 

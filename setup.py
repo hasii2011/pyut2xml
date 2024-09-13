@@ -1,3 +1,4 @@
+
 import pathlib
 from setuptools import setup
 
@@ -25,9 +26,11 @@ setup(
     packages=[
         'pyut2xml'
     ],
-    entry_points='''
-        [console_scripts]
-        pyut2xml=pyut2xml.pyut2xml:commandHandler
-    ''',
     install_requires=['click==8.1.7'],
+    entry_points={
+        "console_scripts": [
+            "pyut2xml=pyut2xml.pyut2xml:commandHandler",
+            "xml2pyut=pyut2xml.xml2pyut:commandHandler",
+        ],
+    },
 )

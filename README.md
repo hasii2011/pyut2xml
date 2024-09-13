@@ -48,7 +48,7 @@ causes pyut2xml to reads from a file named TestFileV10.put and write to a file n
 
 ___
 
-Written by [Humberto A. Sanchez II](mailto@humberto.a.sanchez.ii@gmail.com) (C) 2023
+Written by <a href="mailto:email@humberto.a.sanchez.ii@gmail.com?subject=Hello Humberto">Humberto A. Sanchez II</a>  (C) 2023
 
  
 
