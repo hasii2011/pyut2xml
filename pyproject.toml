@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name='pyut2xml'
 dynamic = ["version"]
-description = 'Pyut decompressor and decompressor'
+description = 'Pyut compressor and decompressor'
 readme = "README.md"
 license = {text = 'GNU AFFERO GENERAL PUBLIC LICENSE'}
 authors = [{name = 'Humberto A. Sanchez II', email = 'Humberto.A.Sanchez.II@gmail.com'}]
 maintainers = [{name = 'Humberto A. Sanchez II', email = 'Humberto.A.Sanchez.II@gmail.com'}]
-keywords = ['git', 'issue management', 'markdown', 'python',]
+keywords = ['git', 'issue management', 'markdown', 'python']
 
 dependencies = [
   'click>=8.1.7',
@@ -18,7 +18,6 @@ dependencies = [
 
 [project.urls]
 Repository = 'https://github.com/hasii2011/pyut2xml'
-
 
 [tool.setuptools.packages.find]
 where = ['src']
