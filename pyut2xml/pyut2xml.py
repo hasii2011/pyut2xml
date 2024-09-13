@@ -23,12 +23,13 @@ class Pyut2XML:
             self._inputFileName: str = inputFileName
         else:
             self._inputFileName = f'{inputFileName}{INPUT_SUFFIX}'
+
         if outputFileName is None:
             clickSEcho('Using input file name as base for output file name', bold=True)
             baseName: str = inputFileName.replace(INPUT_SUFFIX, '')
-            self._outputFileName = f'{baseName}{OUTPUT_SUFFIX}'
+            self._outputFileName: str = f'{baseName}{OUTPUT_SUFFIX}'
         elif OUTPUT_SUFFIX in outputFileName:
-            self._outputFileName: str = outputFileName
+            self._outputFileName = outputFileName
         else:
             self._outputFileName = f'{outputFileName}{OUTPUT_SUFFIX}'
 
