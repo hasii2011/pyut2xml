@@ -1,5 +1,6 @@
 
 import zlib
+from pathlib import Path
 
 from click import command
 from click import option
@@ -21,7 +22,12 @@ class Pyut2XML:
         if INPUT_SUFFIX in inputFileName:
             self._inputFileName: str = inputFileName
         else:
-            self._inputFileName = f'{inputFileName}{INPUT_SUFFIX}'
+            inputPath: Path = Path(inputFileName)
+            suffix:    str  = inputPath.suffix
+            if len(suffix) > 0:
+                self._inputFileName = inputFileName
+            else:
+                self._inputFileName = f'{inputFileName}{INPUT_SUFFIX}'
 
         if outputFileName is None:
             clickSEcho('Using input file name as base for output file name', bold=True)
